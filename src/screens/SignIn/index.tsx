@@ -13,6 +13,9 @@ import { PasswordInput } from "../../components/PasswordInput";
 import { Container, Header, Title, Form, Subtitle, Footer } from "./styles";
 
 export function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const theme = useTheme();
   return (
     <KeyboardAvoidingView behavior="position" enabled>
@@ -38,8 +41,15 @@ export function SignIn() {
               keyboardType="email-address"
               autoCorrect={false}
               autoCapitalize="none"
+              onChangeText={setEmail}
+              value={email}
             />
-            <PasswordInput iconName="lock" placeholder="Senha" />
+            <PasswordInput
+              iconName="lock"
+              placeholder="Senha"
+              value={password}
+              onChangeText={setPassword}
+            />
           </Form>
 
           <Footer>
