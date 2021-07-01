@@ -8,8 +8,8 @@ export const Container = styled.View`
 `;
 
 export const IconContainer = styled.View`
-    height: 56;
-    width: 55;
+    height: 56px;
+    width: 55px;
     justify-content: center;
     align-items: center;
 
