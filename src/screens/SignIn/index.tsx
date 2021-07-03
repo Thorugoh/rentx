@@ -8,6 +8,7 @@ import {
 import * as Yup from "yup";
 
 import { useTheme } from "styled-components";
+import { useAuth } from "../../hooks/auth";
 
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -19,7 +20,10 @@ import { useNavigation } from "@react-navigation/native";
 export function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const navigation = useNavigation();
+  const theme = useTheme();
+  const { signIn } = useAuth();
 
   async function handleSignIn() {
     try {
@@ -32,7 +36,7 @@ export function SignIn() {
 
       await schema.validate({ email, password });
 
-      //Fazer Login
+      await signIn({ email, password });
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         return Alert.alert("Opa", error.message);
@@ -48,7 +52,6 @@ export function SignIn() {
     navigation.navigate("SignUpFirstStep");
   }
 
-  const theme = useTheme();
   return (
     <KeyboardAvoidingView behavior="position" enabled>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
