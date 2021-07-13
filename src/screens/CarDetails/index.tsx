@@ -31,6 +31,7 @@ import {
   Footer,
 } from "./styles";
 import { CarDTO } from "../../dtos/CarDTO";
+
 import { RFValue } from "react-native-responsive-fontsize";
 import { StatusBar, StyleSheet } from "react-native";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
