@@ -18,6 +18,7 @@ import {
 import { Routes } from "./src/routes";
 
 import theme from "./src/styles/theme";
+import { View, Text } from "react-native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
