@@ -5,7 +5,6 @@ import { RectButtonProps } from "react-native-gesture-handler";
 import { Car as ModelCar } from "../../database/models/Car";
 
 import { getAccessoryIcon } from "../../utils/getAccessoryIcon";
-
 import {
   Container,
   Details,
