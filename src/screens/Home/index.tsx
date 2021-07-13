@@ -38,16 +38,12 @@ export function Home() {
         );
 
         const { changes, latestVersion } = response.data;
-        console.log("BACK PARA APP");
-        console.log(changes);
-
         return { changes, timestamp: latestVersion };
       },
       pushChanges: async ({ changes }) => {
-        console.log("APP PARA BACK");
         console.log(changes);
         const user = changes.users;
-        await api.post("/users/sync", user);
+        await api.post("/users/sync", user).catch(console.log);
       },
     });
   }
